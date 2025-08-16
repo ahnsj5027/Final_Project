@@ -1,0 +1,1655 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="style.css" type="text/css" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <title>CSS Tutorial</title>
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: lightblue;
+      font-family: "Open Sans", sans-serif;
+      /* Verdana */
+      font-size: 16px;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      border-top: 5px solid #a66;
+      border-bottom: 5px solid #a66;
+      background: rgba(224, 255, 255, 0.5) url("img/background_CSS.jpg") no-repeat scroll center;
+      background-size: cover;
+      height: auto;
+      min-height: 300px;
+      font-family: Georgia, "Times New Roman", Times, serif;
+    }
+
+    li.marker_a {
+      display: inline;
+    }
+
+    h1 {
+      text-align: center;
+      text-transform: uppercase;
+      /* Georgia */
+      font-family: serif;
+      font-size: clamp(26px, 3vw, 32px);
+      font-weight: bold;
+    }
+
+    h2 {
+      background-color: lightcoral;
+      font-size: clamp(22px, 2.0vw, 28px);
+    }
+
+    h3 {
+      font-size: clamp(18px, 1.5vw, 24px);
+    }
+
+    h4 {
+      font-size: clamp(14px, 1.0vw, 20px)
+    }
+
+    p {
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    section {
+      margin-left: 60px;
+
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    nav {
+      position: fixed;
+      top: 150px;
+      left: 0;
+      width: 100%;
+      z-index: 1100;
+    }
+
+    #clip1 {
+      border: 10px dotted red;
+      border-radius: 5px;
+      padding: 15px;
+      background: yellow;
+      background-clip: border-box;
+      margin-left: 60px;
+    }
+
+    #clip2 {
+      border-style: dotted solid dashed double;
+      border-width: 5px;
+      border-color: black;
+      border-radius: 8px;
+      padding: 15px;
+      background: yellow;
+      background-clip: padding-box;
+      margin-left: 60px;
+    }
+
+    #clip3 {
+      border: thick double;
+      border-color: purple black green violet;
+      border-radius: 12px;
+      padding: 15px;
+      background: yellow;
+      background-clip: content-box;
+      margin-left: 60px;
+    }
+
+    #fancyTable {
+      font-family: Arial, Helvetica, sans-serif;
+      border: 2px solid;
+      width: 100%;
+    }
+
+    #fancyTable th,
+    #fancyTable td {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+
+    #fancyTable tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    #fancyTable tr:hover {
+      background-color: #ddd;
+    }
+
+    #fancyTable th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      height: 50px;
+      text-align: left;
+      background-color: #04aa6d;
+      color: white;
+    }
+
+    #fancyTable td {
+      height: 40px;
+      vertical-align: bottom;
+    }
+
+    #idSelector {
+      font-weight:
+        /* purple */
+        bolder;
+    }
+
+    #panel,
+    .cssFlip {
+      font-size: 16px;
+      padding: 10px;
+      text-align: center;
+      background-color: #4caf50;
+      color: white;
+      border: 1px solid #a6d8a8;
+      margin: auto;
+    }
+
+    #panel {
+      display: none;
+    }
+
+    .fontItalic {
+      font-style: italic
+    }
+
+    .googleFont_Sofia {
+      font-family: "Sofia", sans-serif;
+    }
+
+    .googleFont_Trirong {
+      font-family: "Trirong", serif;
+    }
+
+    .googleFont_Audiowide {
+      font-family: "Audiowide", sans-serif;
+    }
+
+    .hidden_a {
+      display: none;
+    }
+
+    .hidden_b {
+      visibility: hidden;
+    }
+
+    .imgbox {
+      float: left;
+      text-align: center;
+      width: 380px;
+      border: 1px solid gray;
+      margin: 5px;
+      padding: 6px;
+    }
+
+    a.textDecoration {
+      text-decoration: underline;
+      display: block;
+      color: #008cba;
+    }
+
+    a.one:link {
+      color: red;
+      text-decoration: none;
+      background-color: yellow;
+    }
+
+    a.one:visited {
+      color: purple;
+      text-decoration: none;
+      background-color: cyan;
+    }
+
+    a.one:hover {
+      color: hotpink;
+      text-decoration: underline;
+      background-color: lightgreen;
+      font-size: 150%;
+      font-family: monospace;
+      text-decoration: underline;
+    }
+
+    a.one:active {
+      color: blue;
+      text-decoration: underline;
+      background-color: hotpink;
+    }
+
+    a.two:link,
+    a.two:visited {
+      background-color: #f44336;
+      color: Black;
+      border: 2px solid green;
+      padding: 14px 25px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    a.two:hover,
+    a.two:active {
+      background-color: purple;
+      color: white;
+    }
+
+    article {
+      border: 2px solid black;
+      margin-left: 100px;
+    }
+
+    button {
+      width: 100px;
+    }
+
+    caption {
+      caption-side: top;
+      font-size: 2em;
+    }
+
+    .hrcolor {
+      color: black;
+    }
+
+    img.verticalAlignment_a {
+      vertical-align: baseline;
+    }
+
+    img.verticalAlignment_b {
+      vertical-align: text-top;
+    }
+
+    img.verticalAlignment_c {
+      vertical-align: text-bottom;
+    }
+
+    img.verticalAlignment_d {
+      vertical-align: sub;
+    }
+
+    img.verticalAlignment_e {
+      vertical-align: super;
+    }
+
+    h1.textFormatting {
+      text-align: center;
+      text-transform: uppercase;
+      color: #4caf50;
+      font-size: 100%;
+    }
+
+    h3.marginH3 {
+      margin: 0 0 50px 0;
+      color: blue;
+    }
+
+    h4.marginH4 {
+      margin: 20px 0 0 0;
+      color: blue;
+    }
+
+    p.border {
+      border-width: 2px 2px 5px 5px;
+      border-color: black;
+      border-top-style: dotted;
+      border-right-style: solid;
+      border-bottom-style: dotted;
+      border-left-style: solid;
+      border-radius: 5px;
+    }
+
+    p.center {
+      text-align: center;
+    }
+
+    p.displayProperty {
+      background-color: blue;
+      padding: 10px;
+    }
+
+    p.displayProperty_1 {
+      display: none;
+    }
+
+    p.displayProperty_2 {
+      display: inline;
+    }
+
+    p.displayProperty_3 {
+      display: block;
+    }
+
+    p.displayProperty_4 {
+      display: inline-block;
+    }
+
+    p.displayProperty_5 {
+      display: flex;
+    }
+
+    p.displayProperty_6 {
+      display: grid;
+    }
+
+    p.font_Arial {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    p.font_Lucida_Console {
+      font-family: "Lucida Console", "Courier New", monospace;
+    }
+
+    p.font_Times_New_Roman {
+      font-family: "Times New Roman", Times, serif;
+    }
+
+    p.large {
+      font-size: 200%;
+    }
+
+    p.marginInherit {
+      margin-left: inherit;
+      margin-right: 80px;
+      background-color: yellow;
+    }
+
+    p.selector {
+      margin-top: 50px;
+      margin-bottom: 50px;
+      margin-right: 75px;
+      margin-left: 40px;
+    }
+
+    p.textCapitalized {
+      text-transform: capitalize;
+    }
+
+    p.textDecoration_line_through {
+      text-decoration-line: line-through;
+      text-decoration-style: double;
+      text-decoration-thickness: 3px;
+      text-decoration-color: blue;
+    }
+
+    p.textDecoration_overline_underline {
+      text-decoration: overline underline wavy purple;
+    }
+
+    p.textFormatting {
+      text-indent: 50px;
+      text-align: justify;
+      letter-spacing: 3px;
+    }
+
+    p.textRTL {
+      direction: rtl;
+      unicode-bidi: bidi-override;
+    }
+
+    p.textSpacing_1 {
+      text-indent: 50px;
+      letter-spacing: 3px;
+      line-height: 0.8;
+      word-spacing: -2px;
+      white-space: nowrap;
+      color: purple;
+    }
+
+    p.textSpacing_2 {
+      text-indent: 75px;
+      letter-spacing: -2px;
+      line-height: 1.8;
+      word-spacing: 10px;
+      white-space: wrap;
+    }
+
+    p.textSpacing_3 {
+      color: white;
+      text-shadow: 2px 2px 5px #000000;
+    }
+
+    p.textSpacing_4 {
+      text-shadow: 0 0 3px #ff0000, 0 0 5px #0000ff;
+    }
+
+    p.textUppercase {
+      text-transform: uppercase;
+    }
+
+    div.boxSizing {
+      width: auto;
+      padding: 25px;
+      box-sizing: border-box;
+      background-color: yellow;
+    }
+
+    div.colorValues {
+      margin-right: 80%;
+    }
+
+    div.fontGoogle {
+      float: left;
+      margin: 30px;
+      width: 200px;
+      height: 200px;
+      padding: 0px 20px;
+    }
+
+    div.fontGoogle_1 {
+      border: 2px solid black;
+      background-color: yellow;
+    }
+
+    div.fontGoogle_2 {
+      border: 2px solid black;
+      background-color: yellow;
+    }
+
+    div.fontSize {
+      font-size: 1.875em;
+    }
+
+    div.fontStyle {
+      font-style: oblique;
+      font-weight: bold;
+      font-variant: small-caps;
+    }
+
+    div.heightWidth {
+      height: 200px;
+      width: 25%;
+      background-color: yellow;
+    }
+
+    div.marginInherit {
+      margin-left: 40px;
+      margin-right: 670px;
+    }
+
+    div.margins {
+      border: 2px solid black;
+      margin: 50px 40px;
+      background-color: yellow;
+    }
+
+    div.marginAuto {
+      width: auto;
+      margin: auto;
+      border: 2px solid black;
+      background-color: yellow;
+    }
+
+    div.maxWidth {
+      max-width: 450px;
+      height: 100px;
+      background-color: yellow;
+    }
+
+    div.minWidth_maxWidth {
+      max-width: 450px;
+      min-width: 100px;
+      background-color: yellow;
+    }
+
+    div.paddingIndividual {
+      border: 1px solid black;
+      background-color: yellow;
+      padding-top: 50px;
+      padding-right: 20px;
+      padding-bottom: 50px;
+      padding-left: 70px;
+    }
+
+    div.textDirection {
+      border: 2px solid black;
+      max-width: 470px;
+      background-color: yellow;
+    }
+
+    div.textFormatting {
+      border: 2px solid gray;
+      padding: 20px;
+      max-width: 450px;
+      background-color: yellow;
+      /* Set text-align to center */
+    }
+
+    ul.siblingAll li.red~li {
+      background-color: red;
+      width: 50px;
+    }
+
+    ul.siblingDirect li.red+li {
+      background-color: red;
+    }
+
+    ul.pseudoHover li:hover {
+      background-color: red;
+    }
+
+    input.focus:focus {
+      background-color: red;
+    }
+
+    input:required {
+      background-color: red;
+    }
+
+    input:checked {
+      background-color: red;
+      margin: 20px;
+    }
+
+    input:disabled {
+      margin: 20px;
+    }
+
+    ul.marker_a {
+      list-style-type: circle;
+    }
+
+    ul.marker_b {
+      list-style-image: url("img/star.png");
+    }
+
+    ul.marker_c {
+      border-left: 5px solid red;
+      background-color: #f1f1f1;
+      list-style-type: none;
+      padding: 0px 10px;
+      margin-right: 25px;
+      margin-left: 25px;
+    }
+
+    ol.marker_d {
+      list-style: upper-roman inside;
+    }
+
+    ol.marker_e {
+      list-style-type: lower-alpha;
+    }
+
+    ul.color_a {
+      background: #3399ff;
+      padding: 20px;
+      margin-right: 25px;
+    }
+
+    ul.color_a li {
+      background: #cce5ff;
+      color: darkblue;
+      margin: 15px;
+    }
+
+    ul.border_a {
+      list-style-type: none;
+      padding: 0px;
+      border: 2px solid #ddd;
+    }
+
+    ul.border_a li {
+      padding: 8px 16px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    ul.border_a li:last-child {
+      border-bottom: none;
+    }
+
+    ul.listStyle_a {
+      list-style-type: circle;
+    }
+
+    ul.listStyle_b {
+      list-style-type: disc;
+    }
+
+    ul.listStyle_c {
+      list-style-type: square;
+    }
+
+    ol.listStyle_d {
+      list-style-type: armenian;
+    }
+
+    ol.listStyle_e {
+      list-style-type: cjk-ideographic;
+    }
+
+    ol.listStyle_f {
+      list-style-type: decimal;
+    }
+
+    ol.listStyle_g {
+      list-style-type: decimal-leading-zero;
+    }
+
+    ol.listStyle_h {
+      list-style-type: georgian;
+    }
+
+    ol.listStyle_i {
+      list-style-type: hebrew;
+    }
+
+    ol.listStyle_j {
+      list-style-type: hiragana;
+    }
+
+    ol.listStyle_k {
+      list-style-type: hiragana-iroha;
+    }
+
+    ol.listStyle_l {
+      list-style-type: katakana;
+    }
+
+    ol.listStyle_m {
+      list-style-type: katakana-iroha;
+    }
+
+    ol.listStyle_n {
+      list-style-type: lower-alpha;
+    }
+
+    ol.listStyle_o {
+      list-style-type: lower-greek;
+    }
+
+    ol.listStyle_p {
+      list-style-type: lower-latin;
+    }
+
+    ol.listStyle_q {
+      list-style-type: lower-roman;
+    }
+
+    ol.listStyle_r {
+      list-style-type: upper-alpha;
+    }
+
+    ol.listStyle_s {
+      list-style-type: upper-latin;
+    }
+
+    ol.listStyle_t {
+      list-style-type: upper-roman;
+    }
+
+    ol.listStyle_u {
+      list-style-type: none;
+    }
+
+    ol.listStyle_v {
+      list-style-type: inherit;
+    }
+
+    span.displayProperty_1 {
+      display: block;
+    }
+
+    span.displayProperty_4 {
+      background-color: red;
+      color: white;
+      padding: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg">
+          <img src="img/w3schools.jpg" alt="W3 Schools Logo" title="W3 Schools Logo" class="img-fluid" width="100"
+            height="50" loading="lazy">
+          <h1>CSS Tutorial</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <nav class="navbar navbar-expand-lg navbar-white bg-warning fw-bold">
+      <div class="container-fluid">
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar"><span
+            class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse topnav" id="collapsibleNavbar">
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link textDecoration" href="https://www.w3schools.com/css/default.asp" target="_blank">Home</a></li>
+            <li class="nav-item"><a class="nav-link textDecoration"
+                href="https://www.w3schools.com/css/css_examples.asp" target="_blank">CSS Examples</a></li>
+            <li class="nav-item"><a class="nav-link textDecoration"
+                href="https://www.w3schools.com/cssref/index.php" target="_blank">CSS References</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </nav>
+  <main style="padding-top: 380px;">
+    <h2>CSS Selectors</h2>
+    <h3>I. Basic Selectors</h3>
+    <div>
+      <p class="selector">The selector 'p' covers all paragraphs in a document</p>
+      <p class="selector" id="idSelector">ID selectors are defined using a # sign.</p>
+      <p class="selector fontItalic">Class selectors are defined with a period followed by the value of the class to
+        which you want to apply a set of styles.</p>
+      <p class="selector large">HTML elements can also refer to more than one class.</p>
+      <p class="selector large center">This paragraph will be center-aligned.</p>
+    </div>
+    <h3>II. Sibling Selectors</h3>
+    <div>
+      <p><b>1. li.red ~ li: All Siblings that come after in li with the class of red</b></p>
+      <div class="red">This is a div.</div>
+      <span class="blue">This is a span.</span>
+      <div>
+        <span>
+          <b>nested text</b>
+        </span>
+      </div>
+      <ul class="siblingAll">
+        <li class="red">Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+      </ul>
+      <br>
+      <p><b>2. li.red + li: Direct Sibling</b></p>
+      <div class="red">This is a div.</div>
+      <span class="blue">This is a span.</span>
+      <div>
+        <span>
+          <b>nested text</b>
+        </span>
+      </div>
+      <ul class="siblingDirect">
+        <li>Item 1</li>
+        <li class="red">Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+      </ul>
+      <br>
+      <p><b>3. pseudo classes: hover</b></p>
+      <div class="red">This is a div.</div>
+      <span class="blue">This is a span.</span>
+      <div>
+        <span>
+          <b>nested text</b>
+        </span>
+      </div>
+      <ul class="pseudoHover">
+        <li class="red">Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+      </ul>
+      <br>
+      <p><b>4. pseudo classes: focus</b></p>
+      <input class="focus" type="text">
+      <div class="red">This is a div.</div>
+      <span class="blue">This is a span.</span>
+      <div>
+        <span>
+          <b>nested text</b>
+        </span>
+      </div>
+      <ul>
+        <li class="red">Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+      </ul>
+      <br>
+      <p><b>5. pseudo classes: required</b></p>
+      <input required type="text">
+      <div class="red">This is a div.</div>
+      <span class="blue">This is a span.</span>
+      <div>
+        <span>
+          <b>nested text</b>
+        </span>
+      </div>
+      <ul>
+        <li class="red">Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+      </ul>
+      <br>
+      <p><b>6. pseudo classes: checkbox</b></p>
+      <input type="checkbox">
+      <div class="red">This is a div.</div>
+      <span class="blue">This is a span.</span>
+      <div>
+        <span>
+          <b>nested text</b>
+        </span>
+      </div>
+      <ul>
+        <li class="red">Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+      </ul>
+      <br>
+      <p><b>7. pseudo classes: checkbox: disabled</b></p>
+      <input disabled type="checkbox">
+      <div class="red">This is a div.</div>
+      <span class="blue">This is a span.</span>
+      <div>
+        <span>
+          <b>nested text</b>
+        </span>
+      </div>
+      <ul>
+        <li class="red">Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+      </ul>
+    </div>
+
+    <hr>
+
+    <h2>Show Different Images Depending on Browser Width</h2>
+    <p>Resize the browser width and the image will change at 600px and 1500px.</p>
+    <picture>
+      <source srcset="img/small-dog.jpg" media="(max-width: 600px)">
+      <source srcset="img/funny-dog.jpg" media="(max-width: 1500px)">
+      <source srcset="img/big-dog.jpg">
+      <img src="img/big-dog.jpg" alt="Funny Dog" style="width:auto;">
+    </picture>
+
+    <hr>
+
+    <h2>CSS Colors</h2>
+    <h3>I. CSS Color Values</h3>
+    <div>
+      <div class="colorValues">
+        <p class="border">This is a border class.
+        </p>
+        <p style="background-color:rgb(255, 99, 71);">
+          rgb(255, 99, 71)
+        </p>
+        <p style="background-color:#ff6347;">#ff6347
+        </p>
+        <p style="background-color:hsl(9, 100%, 64%);">hsl(9, 100%, 64%)
+        </p>
+        <p style="background-color:rgba(255, 99, 71, 0.5);">rgba(255, 99, 71, 0.5)
+        </p>
+        <p style="background-color:hsla(9, 100%, 64%, 0.5);">hsla(9, 100%, 64%, 0.5)
+        </p>
+      </div>
+    </div>
+    <br>
+    <h3>II. Shades of Gray: RGB</h3>
+    <div>
+      <div class="colorValues">
+        <p style="background-color: rgb(60, 60, 60)">rgb(60, 60, 60)
+        </p>
+        <p style="background-color: rgb(180, 180, 180)">rgb(180, 180, 180)
+        </p>
+        <p style="background-color:rgb(240, 240, 240)">rgb(240, 240, 240)
+        </p>
+      </div>
+    </div>
+    <h3>III. rgba</h3>
+    <div>
+      <div class="colorValues">
+        <p style="background-color:rgba(255, 99, 71, 0)">rgba(255, 99, 71, 0)
+        </p>
+        <p style="background-color:rgba(255, 99, 71, 0.5)">rgba(255, 99, 71, 0.5)
+        </p>
+        <p style="background-color:rgba(255, 99, 71, 1)">rgba(255, 99, 71, 1)
+        </p>
+      </div>
+    </div>
+    <h3>IV. HEX Colors</h3>
+    <div>
+      <div class="colorValues">
+        <p style="background-color:#ff0000">#ff0000
+        </p>
+        <p style="background-color:#f00">#f00
+        </p>
+        <p style="background-color:#228222">#ee8222
+        </p>
+        <p style="background-color:#6a5acd">#6a5acd
+        </p>
+        <p style="background-color:#3c3c3c">#3c3c3c
+        </p>
+        <p style="background-color:#b4b4b4">#b4b4b4
+        </p>
+        <p style="background-color:#f9f9f9">#f9f9f9
+        </p>
+      </div>
+    </div>
+    <h3>V. HSL Colors</h3>
+    <div>
+      <div class="colorValues">
+        <p style="background-color:hsl(0, 100%, 50%)">hsl(0, 100%, 50%
+        </p>
+        <p style="background-color:hsl(0, 0%, 50%)">hsl(0, 0%, 50%)
+        </p>
+        <p style="background-color:hsl(0, 100%, 15%)">hsl(0, 100%, 15%)
+        </p>
+        <p style="background-color:hsl(0, 100%, 100%)">hsl(0, 100%, 100%)
+        </p>
+        <p style="background-color:hsl(147, 50%, 47%)">hsl(147, 50%, 47%)
+        </p>
+        <p style="background-color:hsl(248, 53%, 58%)">hsl(248, 53%, 58%)
+        </p>
+        <p style="background-color:hsla(0, 100%, 50%, 0.3)">hsla(0, 100%, 50%, 0.3)
+        </p>
+      </div>
+    </div>
+
+    <hr>
+
+    <h2>CSS Backgrounds</h2>
+    <h3>I. Background Clip</h3>
+    <div>
+      <div class="background">
+        <p id="clip1">The background extends behind the border (this is default); border: 10px dotted red;
+          border-radius:
+          5px.
+        </p>
+        <p id="clip2">The background extends to the inside edge of the border; border-style: dotted solid dashed double;
+          border-width:5px; border-radius: 8px.
+        </p>
+        <p id="clip3">The background extends to the edge of the content box; border: thick double; border-color: purple
+          black green violet; border-radius: 12px.
+        </p>
+      </div>
+    </div>
+
+    <hr>
+
+    <h2>CSS Margins</h2>
+    <h3>I. Margin - Individual Sides</h3>
+    <div>
+      <div class="margins">
+        <p>
+          This element has a top margin of 100px, a right margin of 150px, a bottom margin of 100px, and a left margin
+          of
+          80px.
+        </p>
+      </div>
+    </div>
+
+    <h3>II. Use of Margin: Auto</h3>
+    <div>
+      <div class="marginAuto">
+        <p>This element will be horizontally centered because it has margin: auto.
+        </p>
+      </div>
+    </div>
+    <br>
+    <h3>III. Use of the Inherit Value</h3>
+    <div class="marginInherit">
+      <p class="marginInherit">
+        This paragraph has an inherited left margin (from the article element).
+      </p>
+    </div>
+    <br>
+    <h3>IV. Margin Collapse</h3>
+    <div>
+      <p>The h3 element has a bottom margin of 50px and the h4 element has a top margin of 20px. So, the vertical margin
+        between h3 and h4 should have been 70px (50px + 20px). However, due to margin collapse, the actual margin ends
+        up being 50px.
+      </p>
+      <h3 class="marginH3">Heading 3</h3>
+      <h4 class="marginH4">Heading 4</h4>
+    </div>
+
+    <hr>
+
+    <h2>CSS Padding</h2>
+    <h3>I. Padding - Individual Sides</h3>
+    <div>
+      <div class="paddingIndividual">
+        <p>This element has a top padding of 50px, a right padding of 20px, a bottom padding of 50px, and a left padding
+          of 70px.
+        </p>
+      </div>
+    </div>
+    <h3>II. Box-Sizing</h3>
+    <div>
+      <div class="boxSizing">
+        <p>The width of this element remains at 925px, in spite of the 50px of total left and right padding, because of
+          the box-sizing: border-box property.
+        </p>
+      </div>
+    </div>
+
+    <hr>
+
+    <h2>CSS Height/Width</h2>
+    <h3>I. Height and Width Examples</h3>
+    <div>
+      <div class="heightWidth">
+        <p>This element has a height of 200px and a width of 25%.
+        </p>
+      </div>
+    </div>
+    <br>
+    <h3>II. Max-Width</h3>
+    <div>
+      <div class="maxWidth">
+        <p>This element has a height of 100px and a max-width of 450px.
+        </p>
+      </div>
+    </div>
+    <br>
+    <h3>III. Min-Width and Max-Width</h3>
+    <div>
+      <div class="minWidth_maxWidth">
+        <p>Resize the browser window to see the effect.
+        </p>
+      </div>
+    </div>
+
+    <hr>
+
+    <h2>CSS Text</h2>
+    <h3>I. Text Formatting</h3>
+    <div>
+      <div class="textFormatting">
+        <h1 class="textFormatting">text formatting</h1>
+        <p class="textFormatting">This text is styled with some of the text formatting properties. The heading uses the
+          text-align, text-transform, and color properties.
+          The paragraph is indented, aligned, and the space between characters is specified. The underline is removed
+          from this colored
+          <a target="_blank" href="styles.css">Try it Yourself</a> link.
+        </p>
+      </div>
+    </div>
+    <br>
+    <h3>II. Text Direction</h3>
+    <div>
+      <div class="textDirection">
+        <p>This is the default text direction.
+        </p>
+        <p class="textRTL">This is right-to-left text direction.
+        </p>
+      </div>
+    </div>
+    <br>
+    <h3>III. Vertical Alignment: An Image in a Text</h3>
+    <div>
+      <div>
+        <p>An <img class="verticalAlignment_a" src="img/w3schools.jpg" alt="image with a default" width="9" height="9">
+          image with a default
+          alignment.
+        </p>
+        <p>An <img class="verticalAlignment_b" src="img/w3schools.jpg" alt="image with a text-top" width="9" height="9">
+          image with a text-top
+          alignment.
+        </p>
+        <p>An <img class="verticalAlignment_c" src="img/w3schools.jpg" alt="image with a text-bottom" width="9"
+            height="9"> image with a text-bottom
+          alignment.
+        </p>
+        <p>An <img class="verticalAlignment_d" src="img/w3schools.jpg" alt="image with a sub alignment" width="9"
+            height="9"> image with a sub alignment.
+        </p>
+        <p>An <img class="verticalAlignment_e" src="img/w3schools.jpg" alt="image with a super" width="9" height="9">
+          image with a super
+          alignment.
+        </p>
+      </div>
+    </div>
+    <br>
+    <h3>IV. Decoration Line to Text</h3>
+    <div>
+      <div>
+        <p class="textDecoration_line_through">Line-through text decoration
+        </p>
+        <p class="textDecoration_overline_underline">Overline and underline text decoration</p>
+      </div>
+    </div>
+    <br>
+    <h3>V. Text Transformation</h3>
+    <div>
+      <div>
+        <p class="textCapitalized">This text is capitalized.
+        </p>
+        <p class="textUppercase">This text is transformed to uppercase.
+        </p>
+      </div>
+    </div>
+    <br>
+    <h3>VI. Text Spacing</h3>
+    <div>
+      <div>
+        <p class="textSpacing_1">This is a paragraph.<br>This is a paragraph. This is a paragraph. This is a paragraph.
+          This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This
+          is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a
+          paragraph. This is a paragraph.
+        </p>
+        <p class="textSpacing_2">This is a paragraph.<br>This is a paragraph. This is a paragraph. This is a paragraph.
+        </p>
+        <p class="textSpacing_3">This is a paragraph: Text-shadow on a white text.<br>This is a paragraph. This is a
+          paragraph. This is a paragraph.
+        </p>
+        <p class="textSpacing_4">This is a paragraph: Text-shadow with red and blue neon glow.<br>This is a paragraph.
+          This is a paragraph. This is a paragraph.
+        </p>
+      </div>
+    </div>
+
+    <hr>
+
+    <h2>CSS Fonts</h2>
+    <h3>I. Generic Font Families</h3>
+    <div>
+      <div>
+        <p class="font_Times_New_Roman">This is a paragraph, shown in the Times New Roman font.
+        </p>
+        <p class="font_Arial">This is a paragraph, shownn in the Arial font.
+        </p>
+        <p class="font_Lucida_Console">This is a paragraph, shown in the Lucida Console font.
+        </p>
+      </div>
+    </div>
+    <h3>II. Font Style</h3>
+    <div>
+      <div class=fontStyle>
+        <p>The font-variant property: Style, Weight, and Variant.
+        </p>
+      </div>
+    </div>
+    <h3>III. Font Size</h3>
+    <div>
+      <div class="fontSize">
+        <p>This is heading 3</p>
+      </div>
+    </div>
+    <h3>IV. Font Google</h3>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="fontGoogle fontGoogle_1">
+          <h3 class="googleFont_Sofia">Sofia Font</h3>
+          <p class="googleFont_Sofia">Lorem ipsum dolor sit amet.</p>
+          <p class="googleFont_Sofia">1234567890</p>
+        </div>
+        <div class="fontGoogle fontGoogle_1">
+          <h3 class="googleFont_Trirong">Trirong Font</h3>
+          <p class="googleFont_Trirong">Lorem ipsum dolor sit amet.</p>
+          <p class="googleFont_trirong">1234567890</p>
+        </div>
+        <div class="fontGoogle fontGoogle_1">
+          <h3 class="googleFont_Audiowide">Audiowide Font</h3>
+          <p class="googleFont_Audiowide">Lorem ipsum dolor sit amet.</p>
+          <p class="googleFont_Audiowide">1234567890</p>
+        </div>
+        <div class="fontGoogle fontGoogle_2">
+          <h3 class="font-effect-fire">Sofia on Fire</h3>
+          <p class="font-effect-neon">Neon Effect</p>
+          <p class="font-effect-outline">Outline Effect</p>
+          <p class="font-effect-emboss">Emboss Effect</p>
+          <p class="font-effect-shadow-multiple">Multiple Shadow Effect</p>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <h2>CSS Icons</h2>
+    <h3>I. Awesome Icons</h3>
+    <div>
+
+      <p>Some Font Awesome icons:</p>
+      <i class="fas fa-cloud"></i>
+      <i class="fas fa-heart"></i>
+      <i class="fas fa-car"></i>
+      <i class="fas fa-file"></i>
+      <i class="fas fa-bars"></i>
+      <br><br>
+      <p>Styled Font Awesome icons (size and color):</p>
+      <i class="fas fa-cloud" style="font-size:60px;color:lightblue;"></i>
+
+    </div>
+    <h3>II. Bootstrap icon</h3>
+
+    <div>
+      <p>Some Bootstrap icons:</p>
+      <i class="glyphicon glyphicon-cloud"></i>
+      <i class="glyphicon glyphicon-remove"></i>
+      <i class="glyphicon glyphicon-user"></i>
+      <i class="glyphicon glyphicon-envelope"></i>
+      <i class="glyphicon glyphicon-thumbs-up"></i>
+      <br><br>
+      <p>Styled Bootstrap icons (size and color):</p>
+      <i class="glyphicon glyphicon-cloud" style="font-size:36px;"></i>
+      <i class="glyphicon glyphicon-cloud" style="font-size:48px;color:red;"></i>
+      <i class="glyphicon glyphicon-cloud" style="font-size:60px;color:blue;"></i>
+    </div>
+
+    <h3>III. Google Icons</h3>
+    <div>
+      <p>Some Google icons:</p>
+      <i class="material-icons">cloud</i>
+      <i class="material-icons">favorite</i>
+      <i class="material-icons">attachment</i>
+      <i class="material-icons">computer</i>
+      <i class="material-icons">traffic</i>
+      <p>Styled Google icons (size and color):</p>
+      <i class="material-icons" style="font-size:36px;">cloud</i>
+      <i class="material-icons" style="font-size:48px;color:red;">cloud</i>
+      <i class="material-icons" style="font-size:60px;color:blue;">cloud</i>
+    </div>
+
+    <hr>
+
+    <h2>CSS Links</h2>
+    <h3>I. Styling Links</h3>
+    <div>
+      <p><b><a class="one" href="https://www.w3schools.com/css/default.asp" target="_blank">This is a link</a></b>
+      </p>
+      <p><b>Note:</b> a:hover MUST come after a:link and a:visited in the CSS definition in order to be effective.</p>
+      <p><b>Not:</b> a:active MUST come after a:hover in the CSS definition in order to be effective.</p>
+    </div>
+
+    <h3>II. Link Buttons</h3>
+
+    <div>
+      <p>A link styled as a button:</p>
+      <a class="two" href="https://www.w3schools.com/css/default.asp" target="_blank">This is a link</a>
+    </div>
+    <br>
+    <h3>III. The Cursor Property</h3>
+
+    <div>
+      <p>Mouse over the words to change the cursor.</p>
+      <span style="cursor:auto">auto</span><br>
+      <span style="cursor:crosshair">crosshair</span><br>
+      <span style="cursor:default">default</span><br>
+      <span style="cursor:e-resize">e-resize</span><br>
+      <span style="cursor:help">help</span><br>
+      <span style="cursor:move">move</span><br>
+      <span style="cursor:n-resize">n-resize</span><br>
+      <span style="cursor:ne-resize">ne-resize</span><br>
+      <span style="cursor:nw-resize">nw-resize</span><br>
+      <span style="cursor:pointer">pointer</span><br>
+      <span style="cursor:progress">progress</span><br>
+      <span style="cursor:s-resize">s-resize</span><br>
+      <span style="cursor:se-resize">se-resize</span><br>
+      <span style="cursor:sw-resize">sw-resize</span><br>
+      <span style="cursor:text">text</span><br>
+      <span style="cursor:w-resize">w-resize</span><br>
+      <span style="cursor:wait">wait</span><br>
+    </div>
+
+
+    <hr>
+
+    <h2>CSS Lists</h2>
+    <h3>I. List Item Markers</h3>
+    <div>
+      <p>Example of Unordered Lists:</p>
+      <ul class="marker_a">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+      </ul>
+      <ul class="marker_b">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+      </ul>
+      <ul class="marker_c">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+      </ul>
+      <ul>
+        <li class="marker_a">Coffee</li>
+        <li class="marker_a">Tea</li>
+        <li class="marker_a">Coca Cola</li>
+      </ul>
+      <p>Example of Ordered Lists:</p>
+      <ol class="marker_d">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+      </ol>
+      <ol class="marker_e">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+      </ol>
+    </div>
+    <h3>II. Styling Lists with Colors</h3>
+    <div>
+      <ul class="color_a">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+      </ul>
+    </div>
+    <h3>III. A Bordered List</h3>
+    <div>
+      <ul class="border_a">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+      </ul>
+    </div>
+    <h3>IV. All List Style Types</h3>
+    <div>
+      <ul class="listStyle_a">
+        <li>Circle type</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+      </ul>
+
+      <ul class="listStyle_b">
+        <li>Disc type</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+      </ul>
+
+      <ul class="listStyle_c">
+        <li>Square type</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+      </ul>
+
+      <ol class="listStyle_d">
+        <li>Armenian type</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+      </ol>
+
+      <ol class="listStyle_e">
+        <li>Cjk-ideographic type</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+      </ol>
+
+      <ol class="listStyle_f">
+        <li>Decimal type</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+      </ol>
+
+      <ol class="listStyle_g">
+        <li>Decimal-leading-zero type</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+      </ol>
+
+      <ol class="listStyle_h">
+        <li>Georgian type</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+      </ol>
+
+      <ol class="listStyle_i">
+        <li>Hebrew type</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+      </ol>
+
+      <ol class="listStyle_j">
+        <li>Hiragana type</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+      </ol>
+
+      <ol class="listStyle_k">
+        <li>Hiragana-iroha type</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+      </ol>
+
+      <ol class="listStyle_l">
+        <li>Katakana type</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+      </ol>
+
+      <ol class="listStyle_m">
+        <li>Katakana-iroha type</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+      </ol>
+
+      <ol class="listStyle_n">
+        <li>Lower-alpha type</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+      </ol>
+
+      <ol class="listStyle_o">
+        <li>Lower-greek type</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+      </ol>
+
+      <ol class="listStyle_p">
+        <li>Lower-latin type</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+      </ol>
+
+      <ol class="listStyle_q">
+        <li>Lower-roman type</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+      </ol>
+
+      <ol class="listStyle_r">
+        <li>Upper-alpha type</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+      </ol>
+
+      <ol class="listStyle_s">
+        <li>Upper-latin type</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+      </ol>
+
+      <ol class="listStyle_t">
+        <li>Upper-roman type</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+      </ol>
+
+      <ol class="listStyle_u">
+        <li>None type</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+      </ol>
+
+      <ol class="listStyle_v">
+        <li>inherit type</li>
+        <li>Tea</li>
+        <li>Coca Cola</li>
+      </ol>
+    </div>
+
+    <hr>
+
+    <h2>CSS Tables</h2>
+    <h3>I. A Fancy Table</h3>
+    <div style="overflow-x: auto;">
+      <table id="fancyTable">
+        <caption>Table 1.1 Customers</caption>
+        <tr>
+          <th>Company</th>
+          <th>Contact</th>
+          <th>Country</th>
+        </tr>
+        <tr>
+          <td>Al Futter</td>
+          <td>Ma Anders</td>
+          <td>United States</td>
+        </tr>
+        <tr>
+          <td>Berg Snab</td>
+          <td>Chris Lund</td>
+          <td>Sweden</td>
+        </tr>
+        <tr>
+          <td>Centro Comer Mocte</td>
+          <td>Fran Chang</td>
+          <td>Mexico</td>
+        </tr>
+        <tr>
+          <td>Ernst Handel</td>
+          <td>Roland Mendel</td>
+          <td>Austria</td>
+        </tr>
+        <tr>
+          <td>Island Trading</td>
+          <td>Helen Ben</td>
+          <td>UK</td>
+        </tr>
+        <tr>
+          <td>Mag Ri</td>
+          <td>Gio Rove</td>
+          <td>Italy</td>
+        </tr>
+      </table>
+    </div>
+
+    <hr>
+
+    <h2>CSS Display</h2>
+    <h3>I. The Display Property</h3>
+    <div>
+      <span class="displayProperty_1">A display property with</span><span class="displayProperty">a value of "block"
+        results in</span>
+      <span class="displayProperty">a line break between each span element.</span>
+    </div>
+    <br>
+    <h3>II. Hide an Element</h3>
+    <div>
+      <p class="hidden_a">This is a hidden paragraph. This element does not take up any space.</p>
+      <p>Notice that the above element with display: none; does not take up any space.</p>
+      <p class="hidden_a">This is a hidden paragraph. This element does take up any space.</p>
+      <p>Notice that the above element with visibility: hidden; still takes up sapce.</p>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <h3>III. Differences Between Display and Visibility</h3>
+        <p><b>Difference Between display: none and visibility: hidden</b></p>
+        <p><strong>visibility: hidden</strong> hides the element, but it still takes up space in the layout.</p>
+        <p><b>display: none</b> removes the element from the document. It does not take up any space.</p>
+        <div class="imgbox" id="imgbox_1">Box 1<br>
+          <img src="img/waffle.jpg" alt="waffle and wine" style="width:100%">
+          <button onclick="removeElement()">Remove</button>
+        </div>
+        <div class="imgbox" id="imgbox_2">Box 2<br>
+          <img src="img/wafflebanner.jpg" alt="waffle" style="width: 100%">
+          <button onclick="changeVisibility()">Hide</button>
+        </div>
+        <div class="imgbox">Box 3<br>
+          <img src="img/wafflemobile.jpg" alt="waffle and strawberries" style="width:100%">
+          <button onclick="resetElement()">Reset All</button>
+        </div>
+        <script>
+          function removeElement() {
+            document.getElementById("imgbox_1").style.display = "none";
+          }
+          function changeVisibility() {
+            document.getElementById("imgbox_2").style.visibility = "hidden";
+          }
+          function resetElement() {
+            document.getElementById("imgbox_1").style.display = "block";
+            document.getElementById("imgbox_2").style.visibility = "visible";
+          }
+        </script>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <h3>IV. The Display Property</h3>
+        <p><b>display: none:</b></p>
+        <p class="displayProperty displayProperty_1">
+          <span>Text 1</span>
+          <span>Text 2</span>
+          <span>Text 3</span>
+        </p>
+        <p><b>display: inline</b></p>
+        <p class="displayProperty displayProperty_2">
+          <span class="displayProperty_4">Text 1</span>
+          <span class="displayProperty_4">Text 2</span>
+          <span class="displayProperty_4">Text 3</span>
+        </p>
+        <p><b>display: block:</b></p>
+        <p class="displayProperty displayProperty_3">
+          <span class="displayProperty_4">Text 1</span>
+          <span class="displayProperty_4">Text 2</span>
+          <span class="displayProperty_4">Text 3</span>
+        </p>
+        <p><b>display: inline-block:</b></p>
+        <p class="displayProperty displayProperty_4">
+          <span class="displayProperty_4">Text 1</span>
+          <span class="displayProperty_4">Text 2</span>
+          <span class="displayProperty_4">Text 3</span>
+        </p>
+        <p><b>display: flex:</b></p>
+        <p class="displayProperty displayProperty_5">
+          <span class="displayProperty_4">Text 1</span>
+          <span class="displayProperty_4">Text 2</span>
+          <span class="displayProperty_4">Text 3</span>
+        </p>
+        <p><b>display: grid:</b></p>
+        <p class="displayProperty displayProperty_6">
+          <span class="displayProperty_4">Text 1</span>
+          <span class="displayProperty_4">Text 2</span>
+          <span class="displayProperty_4">Text 3</span>
+        </p>
+      </div>
+    </div>
+    <br>
+    <h3>V. Using CSS with JavaScript</h3>
+    <div>
+      <p class="cssFlip" onclick="myFunction()">Click to show panel</p>
+      <div id="panel">
+        <p>This panel contains a div element, which is hidden by default (display: none).</p>
+        <p>It is styled with CSS and we use JavaScript to show it (display: block).</p>
+        <p>How it works: Notice that the p element with class="cssFlip" has an onclick attribute attached to it. When
+          the user clicks on the p element, a function called myFunction() is executed, which changes the style of the
+          div with id="panel" from display: none (hidden) to display:block (visible).</p>
+        <p>You will learn more about JavaScript in our JavaScript Tutorial.</p>
+      </div>
+
+      <script>
+        function myFunction() {
+          document.getElementById("panel").style.display = "block";
+        }
+      </script>
+    </div>
+  </main>
+</body>
+
+</html>

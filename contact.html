@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="DOM JavaScript">
+  <meta name="author" content="Sungjoong Ahn">
+  <title>Contact</title>
+  <style>
+    #bio-box {
+      border: 1px solid #ccc;
+      padding: 10px;
+      width: 300px;
+    }
+
+    #hobbies {
+      display: none;
+      margin-top: 10px;
+    }
+
+    .buttonStyled {
+      padding: 10px;
+      margin: 5px;
+      background-color: burlywood;
+      color: black;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg">
+        <h2 style="text-align: center;">Our Contact Form</h2>
+        <form action="https://formspree.io/f/xyzpjjek" class="fs-form" target="_top" method="POST">
+          <div style="font-size: 1.3rem; text-align: center;">
+            <fieldset style="width: 100%; max-width: 655px; margin: auto; padding: 20px;">
+              <legend>Send Us A Message</legend>
+              <p>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="your name" required style="width: 100%; max-width: 250px;">
+              </p>
+              <p>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="your email" required style="width: 100%; max-width: 250px;">
+              </p>
+              <p>
+                <label for="message">Your Message:</label>
+                <br><br>
+                <textarea name="message" id="message" placeholder="Type your message here" style="width: 100%; max-width: 100%; height: 200px;"></textarea>
+              </p>
+            </fieldset>
+            <br>
+            <button style="font-size: 1rem; margin: 0px 7px 0px 0px" type="submit">Submit</button>
+            <button style=" font-size: 1rem" type="reset">Reset</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

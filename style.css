@@ -1,0 +1,70 @@
+/* Style the body */
+* {
+  box-sizing: border-box;
+}
+
+/* The navbar container */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Navbar links */
+.topnav a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: underline;
+}
+
+/* Links - change color on visit */
+.topnav a:visited {
+  color: red;
+  text-decoration: none;
+  background-color: cyan;
+}
+
+a:visited {
+  color: red;
+  text-decoration: none;
+  background-color: cyan;
+}
+
+/* Links - change color on hover */
+.topnav a:hover {
+  background-color: #c0b0b0;
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  background-color: #c0b0b0;
+  color: black;
+  text-decoration: none;
+}
+
+/* Links - change color on active */
+.topnav a:active {
+  color: blue;
+  text-decoration: none;
+  background-color: hotpink;
+}
+
+a:active {
+  color: blue;
+  text-decoration: none;
+  background-color: hotpink;
+}
+
+footer {
+  border-top: 5px solid #a66;
+  clear: both;
+  height: 70px;
+  background-color: #333;
+}
+
+#aboutUS {
+  background-color: peachpuff;
+}

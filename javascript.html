@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="DOM JavaScript">
+  <meta name="author" content="Sungjoong Ahn">
+  <title>My Interactive Bio</title>
+  <style>
+    #bio-box {
+      border: 1px solid #ccc;
+      padding: 10px;
+      width: 300px;
+    }
+
+    #hobbies {
+      display: none;
+      margin-top: 10px;
+    }
+
+    .buttonStyled {
+      padding: 10px;
+      margin: 5px;
+      background-color: burlywood;
+      color: black;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg">
+        <h2 style="text-align: center" id="greeting">Hi, I'm a student!</h2>
+        <div id="bio-box" style="width: 100%; max-width: 670px; margin: auto; text-align:center;">
+          <img src="img/iceland-1.jpg" alt="Sung's Iceland visiting picture" id="profile-pic"
+            class="img-fluid rounded mb-3" style="max-width: 100%; height: auto;"><br><br>
+          <div class="d-flex flex-wrap justify-content-center gap-2 mb-3"></div>
+          <button class="buttonStyled" onclick="changeTextColor()">Change Text Color</button>
+          <button class="buttonStyled" onclick="updateName()">Update Name</button>
+          <button class="buttonStyled" onclick="toggleHobbies()">Show/Hide Hobbies</button>
+          <button class="buttonStyled" onclick="resetBio()">Reset</button>
+          <button class="buttonStyled" onclick="changeProfileImage()">Change Profile Image</button>
+          <div id="hobbies">
+            <p>I love playing with my dog, reading, and hiking!</p>
+          </div>
+        </div>
+        <script>
+          function changeTextColor() {
+            document.getElementById("greeting").style.color = "purple";
+          }
+          function updateName() {
+            document.getElementById("greeting").innerText = "Hi, I'm Sungjoong Ahn!";
+            document.getElementById("greeting").style.fontSize = "2.5rem";
+          }
+          function toggleHobbies() {
+            const hobbies = document.getElementById("hobbies");
+            hobbies.style.display = hobbies.style.display === "none" ? "block" : "none";
+            hobbies.style.fontSize = hobbies.style.fontSize = "2rem";
+          }
+          function resetBio() {
+            document.getElementById("greeting").innerText = "Hi, I'm a student!";
+            document.getElementById("greeting").style.color = "black";
+            document.getElementById("greeting").style.fontSize = "1rem";
+            document.getElementById("hobbies").style.display = "none";
+            const profilePic = document.getElementById("profile-pic");
+            profilePic.src = "img/iceland-1.jpg";
+          }
+          function changeProfileImage() {
+            const profilePic = document.getElementById("profile-pic");
+            profilePic.src = "img/iceland-2.jpg";
+          }
+        </script>
+        <br><br>
+          <h2 style="text-align: center;">Our Contact Form</h2>
+          <form action="https://formspree.io/f/xyzpjjek" class="fs-form" target="_top" method="POST">
+            <div style="font-size: 1.3rem; text-align: center;">
+              <fieldset style="width: 100%; max-width: 655px; margin: auto;">
+                <legend>Send Us A Message</legend>
+                <p>
+                  <label for="name">Name:</label>
+                  <input type="text" id="name" name="name" placeholder="your name" required style="width: 100%; max-width: 250px;" >
+                </p>
+                <p>
+                  <label for="email">Email:</label>
+                  <input type="email" id="email" name="email" placeholder="your email" required style="width: 100%; max-width: 250px;">
+                </p>
+                <p>
+                  <label for="message">Your Message:</label>
+                  <br><br>
+                  <textarea id="message" name="message" placeholder="Type your message here" style="width: 100%; max-width: 650px; height: 200px;"></textarea>
+                </p>
+              </fieldset>
+              <br>
+              <button type="submit" style="font-size: 1rem; margin: 0px 7px 0px 0px">Submit</button>
+              <button type="reset" style=" font-size: 1rem">Reset</button>
+            </div>
+          </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Learning Web Development">
+  <meta name="author" content="Sungjoong Ahn">
+  <title>St Huxley's Community College</title>
+  <!-- Bootstrap via CDN-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="style.css" type="text/css" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    /* Style the body */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0 auto;
+      min-width: 100px;
+      max-width: 100%;
+      font-family: "open sans", sans-serif;
+      font-size: 16px;
+      letter-spacing: 1px;
+      background-image: url("img/paper.jpg");
+      padding-top: 300px;
+    }
+
+    /* Style the header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      border-top: 5px solid #a66;
+      border-bottom: 5px solid #a66;
+      background: lightblue url("img/campus.jpg") no-repeat scroll center;
+      background-size: cover;
+      height: 300px;
+      padding: 10px;
+      text-align: center;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-size: 1.5em;
+    }
+
+    h1 {
+      border-style: solid;
+      background-color: rgba(173, 216, 230, 0.9);
+      position: absolute;
+      border-radius: 10px;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90%;
+      max-width: 500px;
+      padding: 10px;
+    }
+
+    section,
+    nav {
+      padding: 10px;
+      margin-bottom: 40px;
+    }
+
+    /* The navbar container */
+    .topnav {
+      position: fixed;
+      overflow: hidden;
+      background-color: #333;
+      width: 100%;
+      text-align: left; 
+    }
+
+    /* Navbar links */
+    .topnav a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: underline;
+    }
+
+    /* Links - change color on visit */
+    .topnav a:visited {
+      color: red;
+      text-decoration: none;
+      background-color: cyan;
+    }
+
+    a:visited {
+      color: red;
+      text-decoration: none;
+      background-color: cyan;
+    }
+
+    /* Links - change color on hover */
+    .topnav a:hover {
+      background-color: #c0b0b0;
+      color: black;
+      text-decoration: none;
+    }
+
+    a:hover {
+      background-color: #c0b0b0;
+      color: black;
+      text-decoration: none;
+    }
+
+    /* Links - change color on active */
+    .topnav a:active {
+      color: blue;
+      text-decoration: none;
+      background-color: hotpink;
+    }
+
+    a:active {
+      color: blue;
+      text-decoration: none;
+      background-color: hotpink;
+    }
+
+    /* Links - list style */
+    .listStyle_topCourse {
+      list-style-type: square;
+    }
+
+    /* Layout - Main */
+    .column {
+      float: left;
+    }
+
+    .column.sideLeft {
+      float: left;
+      width: 23%;
+    }
+
+    .column.middle {
+      float: left;
+      width: 54%;
+      padding: 0px 20px;
+    }
+
+    .column.sideRight {
+      float: right;
+      width: 23%;
+    }
+
+    .column.sideLeft img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+
+    .column.sideRight img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+      margin-top: 0px;
+    }
+
+    /* Add a card effect for articles */
+    .card_left {
+      background-color: cadetblue;
+      border-radius: 10px;
+      overflow: hidden;
+      padding: 20px 20px;
+      margin-top: 10px;
+    }
+
+    .card_middle {
+      background-color: bisque;
+      border-radius: 10px;
+      overflow: hidden;
+      padding: 20px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+
+    .card_right {
+      background-color: burlywood;
+      border-radius: 10px;
+      overflow: hidden;
+      padding: 20px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+
+    /* Clear floats after the columns */
+    .row::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 800px) {
+
+      .column.sideLeft,
+      .column.middle,
+      .column.sideRight {
+        width: 100%;
+      }
+    }
+
+    /* Responsive laypout - make the navigation links stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+      .topnav a {
+        display: block;
+        width: 100%;
+      }
+    }
+
+    /* Google Fonts */
+    .googleFont_1 {
+      border-style: double;
+      border-width: 5px;
+      border-radius: 10px;
+      border-color: black;
+      padding: 29px 23px;
+      background-color: black;
+      color: white;
+      font-family: "Sofia", sans-serif;
+      font-size: 2.3em;
+      text-align: center;
+    }
+
+    .googlefont_2 {
+      font-family: "Trirong", serif;
+    }
+
+    /* Text Format */
+    p,
+    ul,
+    ol {
+      line-height: 1.5;
+      letter-spacing: 1px;
+    }
+
+    h2 {
+      color: rgb(117, 9, 9);
+    }
+
+    /* Image Description */
+    div.desc {
+      padding: 15px;
+      text-align: center;
+    }
+
+    /* Style the footer */
+    footer {
+      border-top: 5px solid #a66;
+      clear: both;
+      height: 70px;
+      background-color: rgb(193, 239, 255);
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg rounded-3">
+          <h1>St Huxley's Community College</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <nav class="topnav navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar"><span
+          class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a href="https://www.w3schools.com/css/default.asp" target=_blank>Home</a></li>
+          <li class="nav-item"><a href="#">Finding us</a></li>
+          <li class="nav-item"><a href="#">Courses</a></li>
+          <li class="nav-item"><a href="#">Staff</a></li>
+          <li class="nav-item"><a href="#">Media</a></li>
+          <li class="nav-item"><a href="#">Media</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main class="mainColor">
+    <section style="margin-top: 40px;">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg">
+            <div class="column sideLeft">
+              <div class="card_left">
+                <h2>Top Course Choices</h2>
+                <ul class="listStyle_topCourse">
+                  <li><a href="#">Genetic engineering</a></li>
+                  <li><a href="#">Genetic mutation</a></li>
+                  <li><a href="#">Organic Chemistry</a></li>
+                  <li><a href="#">Pharmaceuticals</a></li>
+                  <li><a href="#">Biochemistry with behaviour</a></li>
+                  <li><a href="#">Pure biochemistry</a></li>
+                  <li><a href="#">Data mining</a></li>
+                  <li><a href="#">Computer security</a></li>
+                  <li><a href="#">Bioinformatics</a></li>
+                  <li><a href="#">Cybernetics</a></li>
+                </ul>
+                <img src="img/lecture.jpg" alt="lecture" title="Data Mining Class" loading="lazy">
+                <div class="desc">Data Mining Class</div>
+                <img src="img/classroom.jpg" alt="classroom" title="Professor and Classmates" loading="lazy">
+                <div class="desc">Prof. Web Coding and His Students in Cybernetics</div>
+              </div>
+            </div>
+            <div class="column middle">
+              <div class="card_middle">
+                <h2>Brave New World</h2>
+                <p>It's a brave new world out there. Our children are being put in increasing more competitive
+                  situations,
+                  both
+                  during recreation, and as they start to move into the adult world of <a
+                    href="https://en.wikipedia.org/wiki/Examination">examinations</a>, <a
+                    href="https://en.wikipedia.org/wiki/Jobs">jobs</a>, <a
+                    href="https://en.wikipedia.org/wiki/Career">careers</a>, and other life choices. Having the
+                  wrong
+                  mindset,
+                  becoming <a href="https://en.wikipedia.org/wiki/Emotion">too emotional</a>, or making the wrong
+                  choices
+                  can
+                  contribute to them experiencing difficulty in taking their rightful place in today's ideal
+                  society.
+                </p>
+                <p>As concerned parents, guardians or carers, you will no doubt want to give your children the best
+                  possible
+                  start
+                  in life — and you've come to the right place.</p>
+                <br>
+                <h2>The Best Start in Life</h2>
+                <p>At St. Huxley's, we pride ourselves in not only giving our students a top quality education, but
+                  also
+                  giving
+                  them the societal and emotional intelligence they need to win big in the coming utopia. We not
+                  only
+                  excel
+                  at
+                  subjects such as genetics, data mining, and chemistry, but we also include compulsory lessons in:
+                </p>
+                <ul>
+                  <li>Emotional control</li>
+                  <li>Judgement</li>
+                  <li>Assertion</li>
+                  <li>Focus and resolve</li>
+                </ul>
+                <br>
+                <p>If you are interested, then you next steps will likely be to:</p>
+                <ol>
+                  <li><a href="#">Call us</a> for more information</li>
+                  <li><a href="#">Ask for a brochure</a>, which includes signup form</li>
+                  <li><a href="#">Book a visit</a>!</li>
+                </ol>
+              </div>
+            </div>
+            <div class="column sideRight">
+              <div class="card_right">
+                <h2>Campus Life</h2>
+                <h3>Housing</h3>
+                <img src="img/dorm.jpg" alt="dorm" title="Student Dormitory" loading="lazy">
+                <div class="desc">A Typical Freshman Dorm</div>
+                <br>
+                <h3>Intramurals and Club Sports</h3>
+                <img src="img/swimming.jpg" alt="swimming" title="Swimming Lesson" loading="lazy">
+                <div class="desc">Swimming Pool</div>
+              </div>
+              <div>
+                <p class="googleFont_1 font-effect-neon">
+                  See You Soon</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p class="googleFont_2 font-effect-shadow-multiple">&copy; 2016 St Huxley's Community College</p>
+  </footer>
+</body>
+
+</html>

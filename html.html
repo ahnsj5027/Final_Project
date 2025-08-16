@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device, initial=scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Learn HTML">
+    <meta name="author" content="Sungjoong Ahn">
+    <title>Learning Web Development</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="style.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="icon"
+        href="https://w7.pngwing.com/pngs/5/56/png-transparent-website-development-html5-logo-world-wide-web-consortium-world-wide-web-angle-web-design-text.png"
+        type="image/x-icon">
+
+    <style>
+        body {
+            margin: 0 auto;
+            min-width: 100px;
+            max-width: 100%;
+            font-family: "open sans", sans-serif;
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            border-top: 5px solid #a66;
+            border-bottom: 5px solid #a66;
+            background: rgba(224, 255, 255, 0.5) url("img/background_CSS.jpg") no-repeat scroll center;
+            height: 300px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 1.5em;
+        }
+
+        nav {
+            position: fixed;
+            top: 300px;
+            left: 0;
+            width: 100%;
+            z-index: 1100;
+        }
+
+        p {
+            color: black;
+            font-family: Courier;
+            font-size: 160%;
+        }
+
+        .tableLayout1 {
+            border: 5px solid;
+        }
+
+        .tableLayout2-1 {
+            width: 100%;
+            border: 0px;
+        }
+
+        .tableLayout2-2 {
+            background-color: #b5dcb3;
+        }
+
+        .tableLayout3-1 {
+            vertical-align: top;
+        }
+
+        .tableLayout3-2 {
+            background-color: #aaa;
+            width: 50px;
+        }
+
+        .tableLayout3-3 {
+            background-color: #eee;
+            width: 100px;
+            height: 150px;
+        }
+
+        .footerRow {
+            background-color: #b5dcb3;
+            text-align: center;
+        }
+
+        .shadowbox {
+            background-color: rgb(225, 230, 176);
+            width: 25em;
+            border: 1px solid #333;
+            box-shadow: 8px 8px 5px #444;
+            padding: 8px 12px;
+            background-image: linear-gradient(180deg, #fff, #ddd 40%, #ccc);
+        }
+    </style>
+</head>
+
+<body style="background-color: powderblue;">
+    <header>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg">
+                    <img src="img/W3Schools.png" alt="W3 School Logo" title="W3 School Logo" class="img-fluid"
+                        width="150" height="100" loading="lazy">
+                    <div>
+                        <h1 class="text-center" style="color: blue; font-family: verdana; font-size: 3rem;">Learning
+                            Web Development</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <hr style="color: red">
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+    <nav>
+        <div class="container-fluid">
+            <div class="row" style="background-color: black;">
+                <div class="col-lg">
+                    <h2 style="color: white;">Contents</h2>
+                    <ul>
+                        <li><a href="#Hyperlink">I. HTML Hyperlink</a></li>
+                        <li><a href="#Paragraphs"><br>II. HTML Paragraphs</a></li>
+                        <li><a href="#Tables"><br>III. HTML Tables</a></li>
+                        <li><a href="#Forms"><br>IV. HTML Forms: Login Form</a></li>
+                        <li><a href="#Lists"><br>V. HTML Lists</a></li>
+                        <li><a href="#CSS"><br>VI. HTML and CSS Style</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main style="margin-top: 200px">
+        <hr>
+        <section id="Hyperlink">
+            <h2 style="color: blue">I. HTML Hyperlink</h2>
+            <p>
+                &nbsp;Visit<a href="https://www.w3schools.com/html/html_examples.asp"> HTML Examples</a> and
+                <a href="about.html">Practices</a> for more information
+            </p>
+        </section>
+        <br>
+        <section id="Paragraphs">
+            <h2 style="color: blue">II. HTML Paragraphs</h2>
+            <p style="border: 2px solid black; padding: 30px; margin: 50px;">This is my paragraph text.
+                <br>This is my paragraph text. <br>This is my paragraph text.
+            </p>
+        </section>
+        <br>
+        <section id="Tables">
+            <h2 style="color: blue">III. HTML Tables</h2>
+            <h3 style="color: purple">1. A Basic Table</h3>
+            <table>
+                <tr>
+                    <td>Joseph</td>
+                    <td>23</td>
+                </tr>
+                <tr>
+                    <td>Mary</td>
+                    <td>27</td>
+                </tr>
+                <tr>
+                    <td>Paul</td>
+                    <td>25</td>
+                </tr>
+            </table>
+            <h3 style="color: purple">2. A Table with a Title, Border, and Headings</h3>
+            <table class="tableLayout1">
+                <tr>
+                    <th colspan="2"></th>
+                </tr>
+
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                </tr>
+                <tr>
+                    <td>Joseph</td>
+                    <td>23</td>
+                </tr>
+                <tr>
+                    <td>Mary</td>
+                    <td>27</td>
+                </tr>
+                <tr>
+                    <td>Paul</td>
+                    <td>25</td>
+                </tr>
+            </table>
+            <h3 style="color: purple">3. HTML Layout Using Tables</h3>
+            <table class="tableLayout2-1">
+                <tr>
+                    <td class="tableLayout2-2" colspan="2">
+                        <h3>This is Sample Web Page</h3>
+                    </td>
+                </tr>
+                <tr class="tableLayout3-1">
+                    <td class="tableLayout3-2">
+                        <b>Main Menu</b><br>
+                        <abbr title="Hypertext Markup Language">HTML</abbr><br>
+                        JavaScript<br>
+                        <abbr title="Cascade Style Sheet">CSS</abbr>
+                    </td>
+                    <td class="tableLayout3-3">Web Design and Development</td>
+                </tr>
+                <tr>
+                    <td class="footerRow" colspan="2">
+                        Copyright © 2025
+                    </td>
+                </tr>
+            </table>
+        </section>
+        <br>
+        <section id="Forms">
+            <h2 style="color: blue">IV. HTML Forms: Login Form</h2>
+            <form>
+                <label>Username: <input type="text"></label>
+                <label>Password: <input type="password"></label>
+                <input type="submit" value="Submit">
+            </form>
+            <br>
+            <br>
+        </section>
+        <br>
+        <section id="Lists">
+            <h2 style="color: blue">V. HTML Lists</h2>
+            <h3 style="color: purple">1. Description Lists</h3>
+            <dl>
+                <dt>Synonym</dt>
+                <dd> A word whose meaning is the same as that of another word.</dd>
+
+                <dt>Antonym</dt>
+                <dd>A word which has the opposite meaning of another word.</dd>
+            </dl>
+            <h3 style="color:purple">2. Ordered Lists</h3>
+            <ol>
+                <li>Strawberries</li>
+                <li>Oranges</li>
+                <li>Grapes</li>
+            </ol>
+            <h3 style="color: purple">3. Ordered Lists with the Start Attribute</h3>
+            <ol start="7">
+                <li>Raspberries</li>
+                <li>cherries</li>
+                <li>plums</li>
+            </ol>
+            <h3 style="color:purple">4. Unordered Lists</h3>
+            <ul>
+                <li>My Address</li>
+                <li>Sungjoong Ahn</li>
+                <li>(202) xxxx-xxxx</li>
+            </ul>
+        </section>
+        <br>
+        <div id="CSS">
+            <h2 style="color: blue">VI. HTML and CSS Style</h2>
+            <div class="shadowbox">
+                <p>Here is a very interesting note displayed <em>in a lovely shadowed box.</em><br>
+                    <span lang="ko">참 재미있습니다! 열심히
+                        배우겠습니다. <strong>많이 가르쳐주십시오.</strong></span>
+                </p>
+            </div>
+            <br>
+            <br>
+            <br>
+        </div>
+        <hr>
+        <h3>Contact</h3>
+        <address>
+            20 10th Street, NW<br>
+            Washington, DC 10000<br>
+            (202) 100-1000
+        </address>
+        <!-- TODO: Add more contacts such as email and Fax -->
+        <p>
+            <a href="#">Back to Top</a>
+        </p>
+    </main>
+</body>
+
+</html>

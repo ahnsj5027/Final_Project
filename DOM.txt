@@ -1,0 +1,82 @@
+DOCTYPE:html
+
+HTML
+  HEAD
+    TITLE
+      #text: Bootstrap 5 Tutorial
+  BODY
+    NAV(BOOTSTRAP NAVBAR)
+      DIV.CONTAINER-FLUID
+        NAV
+	  LI
+            #text: Home
+	  LI
+            #text: About
+	  LI
+            #text: Tutorial
+	  LI
+            #text: FAQs
+	  LI
+            #text: Contact
+    DIV.CONTAINER-FLUID(BOOTSTRAP JUMBOTRON)
+      DIV.ROW    
+        H1
+          #text: Bootstrap Cards with Icons
+        P
+          #text: Three responsive cards using Bootstrap flexbox and icons
+        A.BUTTON
+          #text: Learn More
+    DIV.CONTAINER-FLUID(BOOTSTRAP CARDS)
+      DIV.ROW
+	DIV.CARD
+          I(ICON)
+	  H2
+            #text: Web Design
+          P
+            #text: Learn HTML, CSS and layout basics
+          A.BUTTON
+            #text: Learn More
+	DIV.CARD
+          I(ICON)
+	  H2
+            #text: Development
+          P
+            #text: Use JavaScrip and Bootstrap to build responsive sites. Input your scripts.
+          INPUT.BUTTON
+            #text: Start Coding
+	DIV.CARD
+          I(ICON)
+	  H2
+            #text: Version Control
+	  P
+	    #text: Learn Git and GitHub collaboration basics. Submit your ideas.
+	  INPUT.SUBMIT
+	    #text: Get Started
+	DIV.CARD
+          I(ICON)
+          H2
+	    #text: Analytics
+	  P
+	    #text: Track and analyze website traffic. Reset when you are done.
+ 	  INPUT.RESET
+	    #text: View Stats
+   	DIV.CARD
+          I(ICON)
+	  H2
+	    #text: Security
+	  P
+	    #text: Understand basic web security concepts.
+	  A.BUTTON
+	    #text: Learn More
+	DIV.CARD
+          I(ICON)
+	  H2
+	    #text: Tools
+	  P
+	    #text: Explore developer tools and extensions.
+	  A.BUTTON
+	    #text: Explore
+    FOOTER
+      DIV.CONTAINER-FLUID		
+        P 
+	  #text: Copyright &copy; Bootstrap 5 Tutorial 2025
